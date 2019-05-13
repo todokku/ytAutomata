@@ -1,0 +1,1 @@
+from subscribeAutom import subscribe

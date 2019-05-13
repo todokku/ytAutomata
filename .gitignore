@@ -1,0 +1,11 @@
+#IDE
+.idea/
+
+#Virtual Enviroment
+venv/
+
+#Config
+config/config.py
+
+#Chromedriver
+chromedriver.exe

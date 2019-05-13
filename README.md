@@ -9,36 +9,57 @@ You have to provide a few things to get this project up running.
 
 First you have to download the [chromedriver](http://chromedriver.chromium.org/downloads) (Select the version according to your Chrome version) and place it on the project's root directory.
 
-### Selenium for Python
+### Depedencies
 
-Now you have to install the Selenium package. You can do it in a lot of ways, but I recommend you to use a virtual enviroment. ([see here for more details](https://selenium-python.readthedocs.io/installation.html))
-After you're in your virtual enviroment install the selenium package from pip.
-
-```
-pip install selenium
-```
-
-### Create a Config file
-
-And finally you have to create a config.py file to recieve the inputs (google accounts) and the channel URL. The config.py file has to be on a config folder in the project's root.(config/config.py)
-On the config.py file you have to create an array of dictionaries for the inputs and a variable with the channel URL (example below)
+All the depedencies are on the requirements.txt file. Just intall them with pip
 
 ```
-accounts = [
-    {
-        'email': "email1@email.com",
-        'password': "password"
-    },
-    ...
-]
-
-channelURL = "https://www.youtube.com/channel/UCQ45OjLUjfYlsFpOmWORHRA"
+pip install -r requirements.txt
 ```
 
 ## Running the project
 
-Now that you've already setting things up. Just run the automata.py file and have fun!
+This is a Flask project and everything is configured to work. Just run the Flask app.
 
 ```
-python automata.py
+flask run
+```
+
+## Using the automation
+
+Now the project should be runing on the 5000 port. You have to do a POST request to **localhost:5000/automata** with the following body:
+
+```
+{
+    "accounts": [
+	{
+	    "email": "email@email.com",
+	    "password": "password"
+	},
+	{
+	    "email": "email2@email.com",
+	    "password": "password"
+	}
+    ],
+    "channelURL": "https://www.youtube.com/channel/UCQ45OjLUjfYlsFpOmWORHRA"
+}
+```
+
+The response should be something like this:
+
+```
+{
+    "response": [
+        {
+            "account": "email@email.com",
+            "motive": "Already subscribed",
+            "subscribed": false
+        },
+        {
+            "account": "email2@email.com",
+            "subscribed": true
+        }
+    ],
+    "status": 200
+}
 ```

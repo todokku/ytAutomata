@@ -5,7 +5,7 @@
 venv/
 
 #Config
-config/config.py
+*config.py
 
 #Chromedriver
 chromedriver.exe

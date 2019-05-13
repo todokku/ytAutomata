@@ -1,11 +1,10 @@
 #IDE
 .idea/
 *.pyc
+*.log
+
 #Virtual Enviroment
 venv/
-
-#Config
-*config.py
 
 #Chromedriver
 chromedriver.exe

@@ -29,8 +29,9 @@ class LoginAutomata:
             self.driver.find_element(By.NAME, "password")
             accSelector = self.driver.find_element(By.ID, "profileIdentifier")
             accSelector.click()
-            self.wait.until(EC.presence_of_element_located((By.XPATH, "//div[text() = 'Usar outra conta']")))
-            changeAcc = self.driver.find_element(By.XPATH, "//div[text() = 'Usar outra conta']")
+            time.sleep(1)
+            self.wait.until(EC.presence_of_element_located((By.CLASS_NAME, "BHzsHc")))
+            changeAcc = self.driver.find_element(By.CLASS_NAME, "BHzsHc")
             changeAcc.click()
         except:
             print("entrou except")

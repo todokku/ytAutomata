@@ -1,0 +1,1 @@
+from app.automata.subscribeAutom import subscribe

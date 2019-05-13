@@ -1,6 +1,6 @@
 #IDE
 .idea/
-
+__pycache__/*
 #Virtual Enviroment
 venv/
 

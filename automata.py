@@ -5,7 +5,7 @@ from subscribeAutom import subscribe
 from config import config
 
 accounts = config.accounts
-channelURL = "https://www.youtube.com/channel/UCQ45OjLUjfYlsFpOmWORHRA"
+channelURL = config.channelURL
 driver = webdriver.Chrome()
 SubscribeAutomata = subscribe.SubscribeAutomta(driver)
 

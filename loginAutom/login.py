@@ -21,7 +21,7 @@ class LoginAutomata:
         # Click Login Button
         loginButton = self.driver.find_element(By.XPATH, "//yt-formatted-string[text() = 'Fazer login']")
         loginButton.click()
-        #self.wait.until(EC.presence_of_element_located((By.ID, "identifierId")))
+        self.wait.until(EC.title_contains("YouTube"))
         assert "YouTube" in self.driver.title
 
         try:
@@ -32,10 +32,10 @@ class LoginAutomata:
             self.wait.until(EC.presence_of_element_located((By.XPATH, "//div[text() = 'Usar outra conta']")))
             changeAcc = self.driver.find_element(By.XPATH, "//div[text() = 'Usar outra conta']")
             changeAcc.click()
-            self.wait.until(EC.element_to_be_clickable((By.ID, "identifierId")))
         except:
             print("entrou except")
         # Login in
+        self.wait.until(EC.element_to_be_clickable((By.ID, "identifierId")))
         emailInput = self.driver.find_element(By.ID, "identifierId")
         #emailInput.clear()
         emailInput.send_keys(self.account['email'])

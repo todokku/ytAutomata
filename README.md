@@ -27,18 +27,21 @@ flask run
 
 ## Using the automation
 
-Now the project should be runing on the 5000 port. You have to do a POST request to the localhost:5000/automata with the following body:
+Now the project should be runing on the 5000 port. You have to do a POST request to **localhost:5000/automata** with the following body:
 
 ```
 {
-	"accounts": [
-		{
-	        "email": "email@email.com",
-	        "password": "password"
-	    },
-	    ...
-	],
-	"channelURL": "https://www.youtube.com/channel/UCQ45OjLUjfYlsFpOmWORHRA"
+    "accounts": [
+	{
+	    "email": "email@email.com",
+	    "password": "password"
+	},
+	{
+	    "email": "email2@email.com",
+	    "password": "password"
+	}
+    ],
+    "channelURL": "https://www.youtube.com/channel/UCQ45OjLUjfYlsFpOmWORHRA"
 }
 ```
 
